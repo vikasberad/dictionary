@@ -17,18 +17,20 @@ def translate(word):
         if decide == "y":
             return data[get_close_matches(word , data.keys())[0]]
         elif decide == "n":
-            return("wrong keys ")
+            inputword()
+       #     return("wrong keys ")
         else:
             return("You have entered wrong input please enter just y or n")
     else:
         print("wrong keys")
 
-
-
-word = input("Enter the word you want to search")
-output = translate(word)
-if type(output) == list:
-    for item in output:
-        print(item)
-else:
-    print(output)
+def inputword():
+    word = input("Enter the word you want to search")
+    output = translate(word)
+    if type(output) == list:
+        for item in output:
+            print(item)
+    else:
+        print(output)
+        
+inputword()
